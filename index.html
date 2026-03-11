@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO 基础标签 -->
+  <title>在线图片加水印工具 - 身份证水印/证件照水印 | 100%本地处理，保护隐私安全</title>
+  <meta name="description" content="免费在线图片加水印工具，专为身份证、证件照、合同文件等敏感图片设计。支持自定义水印文字、颜色、透明度、角度，一键铺满防盗水印。100%纯浏览器本地处理，绝不上传您的任何图片，彻底保护隐私安全。">
+  <meta name="keywords" content="图片水印,身份证水印,身份证加水印,证件照水印,证件照加水印,图片加水印,在线加水印,水印工具,照片水印,照片加水印,文字水印,防盗水印,本地处理,隐私保护,免费水印工具,身份证复印件水印,证件水印,合同水印,文件水印,护照水印,给图片加水印,批量水印,透明水印">
+  <meta name="author" content="Privacy Mark">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://privacy-mark.pages.dev/">
+
+  <!-- Open Graph / 社交分享 -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="在线图片加水印工具 - 身份证水印 | 100%本地处理">
+  <meta property="og:description" content="免费在线为身份证、证件照、合同等敏感图片添加保护水印。纯浏览器本地处理，绝不上传图片，保护您的隐私安全。">
+  <meta property="og:url" content="https://privacy-mark.pages.dev/">
+  <meta property="og:site_name" content="Privacy Mark - 图片水印工具">
+  <meta property="og:locale" content="zh_CN">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="在线图片加水印工具 - 身份证/证件照水印">
+  <meta name="twitter:description" content="100%本地处理的免费图片水印工具，为身份证、证件照等敏感图片添加防盗水印，保护您的隐私。">
+
+  <!-- 结构化数据 JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Privacy Mark - 图片水印工具",
+    "alternateName": ["在线加水印工具", "身份证加水印", "证件照水印工具"],
+    "description": "免费在线图片加水印工具，专为身份证、证件照、合同等敏感图片设计。100%纯浏览器本地处理，彻底保护隐私安全。",
+    "url": "https://privacy-mark.pages.dev/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires a modern browser with HTML5 Canvas support",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "CNY"
+    },
+    "featureList": [
+      "身份证加水印",
+      "证件照加水印",
+      "自定义水印文字",
+      "自定义水印颜色与透明度",
+      "自定义水印角度与间距",
+      "导出 PNG/JPG/WebP 格式",
+      "100% 浏览器本地处理",
+      "无需上传图片"
+    ],
+    "isAccessibleForFree": true,
+    "inLanguage": "zh-CN"
+  }
+  </script>
+
+  <!-- FAQ 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "身份证怎么加水印？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "使用本工具，只需上传身份证图片，输入水印文字（如"仅供XXX使用"），即可一键为身份证铺满保护水印。整个过程100%在浏览器本地完成，不会上传你的身份证照片，安全可靠。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "这个工具会上传我的图片吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "绝对不会。本工具采用纯前端技术，所有图片处理（读取、加水印、导出）均在你的浏览器本地完成，没有任何后端服务器，不会上传或存储任何图片数据。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "支持哪些图片格式？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "支持上传 JPG、PNG、WebP、BMP 等常见图片格式，导出时可选择 PNG（最高画质）、JPG（适合控制体积）、WebP（现代推荐格式）。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "可以给证件照加水印吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "当然可以。本工具专为身份证、护照、驾照、学生证等各类证件照设计，支持自定义水印文字、颜色、大小、透明度和角度，满足各种使用场景。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 顶部导航栏 -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+          <path d="M2 17l10 5 10-5"/>
+          <path d="M2 12l10 5 10-5"/>
+        </svg>
+        <h1>图片水印工具</h1>
+        <span class="privacy-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="privacy-icon">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          100% 本地处理
+        </span>
+      </div>
+    </div>
+    <div class="header-right">
+      <button id="themeToggle" class="btn-icon" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- 主内容区域 -->
+  <main class="main-content">
+    <!-- 左侧控制面板 -->
+    <aside class="control-panel">
+      <!-- 可滚动内容区域 -->
+      <div class="panel-scroll">
+        <!-- 上传区域 -->
+        <section class="panel-section">
+          <h2 class="section-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="section-icon">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="17 8 12 3 7 8"/>
+              <line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+            上传图片
+          </h2>
+          <div id="dropZone" class="drop-zone">
+            <div class="drop-zone-content">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="drop-icon">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <p class="drop-text">拖拽图片到此处</p>
+              <p class="drop-hint">或点击选择文件</p>
+              <p class="drop-formats">支持 JPG / PNG / WEBP / BMP</p>
+            </div>
+            <input type="file" id="fileInput" accept="image/*" hidden>
+          </div>
+          <!-- 已上传后显示的文件信息 -->
+          <div id="fileInfo" class="file-info" hidden>
+            <div class="file-info-preview">
+              <img id="fileThumbnail" alt="缩略图">
+            </div>
+            <div class="file-info-detail">
+              <span id="fileName" class="file-name"></span>
+              <span id="fileSize" class="file-size"></span>
+            </div>
+            <button id="removeFile" class="btn-icon-small" title="移除图片">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+            </button>
+          </div>
+        </section>
+
+        <!-- 水印设置 -->
+        <section class="panel-section">
+          <h2 class="section-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="section-icon">
+              <path d="M12 20h9"/>
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+            </svg>
+            水印设置
+          </h2>
+
+          <!-- 水印文字 -->
+          <div class="form-group">
+            <label for="watermarkText">水印文字</label>
+            <textarea id="watermarkText" class="form-input" rows="2" placeholder="请输入水印文字，如：仅供xxx使用">仅供个人使用</textarea>
+          </div>
+
+          <!-- 模板预设 -->
+          <div class="form-group">
+            <label>快捷模板</label>
+            <div class="template-chips">
+              <button class="chip" data-text="仅供个人使用">个人使用</button>
+              <button class="chip" data-text="仅供办理业务使用">办理业务</button>
+              <button class="chip" data-text="仅供身份验证使用">身份验证</button>
+              <button class="chip" data-text="">自定义</button>
+            </div>
+          </div>
+
+          <!-- 水印样式设置 (折叠) -->
+          <details class="export-details">
+            <summary>水印样式</summary>
+            <div class="export-settings-content">
+              <!-- 字体大小 -->
+              <div class="form-group">
+                <label for="fontSize">
+                  字体大小
+                  <span class="value-display" id="fontSizeValue">24px</span>
+                </label>
+                <input type="range" id="fontSize" class="form-range" min="12" max="72" value="24" step="1">
+              </div>
+
+              <!-- 字体颜色 -->
+              <div class="form-group">
+                <label for="fontColor">字体颜色</label>
+                <div class="color-picker-row">
+                  <input type="color" id="fontColor" class="form-color" value="#ffffff">
+                  <div class="color-presets">
+                    <button class="color-preset" data-color="#ffffff" style="background:#ffffff" title="白色"></button>
+                    <button class="color-preset" data-color="#000000" style="background:#000000" title="黑色"></button>
+                    <button class="color-preset" data-color="#ff3b30" style="background:#ff3b30" title="红色"></button>
+                    <button class="color-preset" data-color="#007aff" style="background:#007aff" title="蓝色"></button>
+                    <button class="color-preset" data-color="#8e8e93" style="background:#8e8e93" title="灰色"></button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 透明度 -->
+              <div class="form-group">
+                <label for="opacity">
+                  透明度
+                  <span class="value-display" id="opacityValue">30%</span>
+                </label>
+                <input type="range" id="opacity" class="form-range" min="5" max="100" value="30" step="1">
+              </div>
+              
+              <!-- 字体选择 -->
+              <div class="form-group" style="position: relative; z-index: 201;">
+                <label for="fontFamily">字体</label>
+                <div class="custom-select custom-select-full" id="fontSelect">
+                  <button class="custom-select-trigger" type="button">
+                    <span class="custom-select-value">思源黑体 (Noto Sans SC)</span>
+                    <svg class="custom-select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12">
+                      <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                  </button>
+                  <ul class="custom-select-menu">
+                    <li class="custom-select-item selected" data-value="'Noto Sans SC', sans-serif">思源黑体 (Noto Sans SC)</li>
+                    <li class="custom-select-item" data-value="'Inter', sans-serif">Inter (开源无衬线体)</li>
+                    <li class="custom-select-item" data-value="monospace">等宽字体 (Monospace)</li>
+                    <li class="custom-select-item" data-value="sans-serif">默认系统无衬线 (Sans-serif)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- 旋转角度 -->
+              <div class="form-group">
+                <label for="rotation">
+                  旋转角度
+                  <span class="value-display" id="rotationValue">-30°</span>
+                </label>
+                <input type="range" id="rotation" class="form-range" min="-90" max="90" value="-30" step="1">
+              </div>
+
+              <!-- 水印间距 -->
+              <div class="form-group">
+                <label for="spacing">
+                  水印间距
+                  <span class="value-display" id="spacingValue">100px</span>
+                </label>
+                <input type="range" id="spacing" class="form-range" min="30" max="300" value="100" step="5">
+              </div>
+            </div>
+          </details>
+        </section>
+      </div>
+
+      <!-- 导出栏（固定在面板底部） -->
+      <div class="export-bar">
+        <div class="custom-select" id="formatSelect">
+          <button class="custom-select-trigger" type="button">
+            <span class="custom-select-value">PNG</span>
+            <svg class="custom-select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <ul class="custom-select-menu">
+            <li class="custom-select-item selected" data-value="png">PNG<span class="item-desc">最高画质</span></li>
+            <li class="custom-select-item" data-value="jpeg">JPG<span class="item-desc">平衡体积</span></li>
+            <li class="custom-select-item" data-value="webp">WebP<span class="item-desc">推荐格式</span></li>
+          </ul>
+        </div>
+        <button id="exportBtn" class="btn-export" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-svg">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          导出图片
+        </button>
+      </div>
+    </aside>
+
+    <!-- 右侧预览区域 -->
+    <section class="preview-area">
+      <!-- 空状态 -->
+      <div id="emptyState" class="empty-state">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="empty-icon">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+          <circle cx="8.5" cy="8.5" r="1.5"/>
+          <polyline points="21 15 16 10 5 21"/>
+        </svg>
+        <p class="empty-title">上传图片开始添加水印</p>
+        <p class="empty-hint">支持拖拽到左侧上传区域或整个页面</p>
+      </div>
+      <!-- 预览画布容器 -->
+      <div id="previewContainer" class="preview-container" hidden>
+        <canvas id="previewCanvas"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <!-- SEO 语义化内容区域（面向搜索引擎的可索引文本） -->
+  <footer class="seo-content" role="contentinfo">
+    <div class="seo-inner">
+      <section>
+        <h2>在线图片加水印工具</h2>
+        <p>Privacy Mark 是一款免费的在线图片加水印工具，专为需要保护隐私的用户设计。无论您是要给<strong>身份证加水印</strong>、为<strong>证件照加水印</strong>，还是需要给合同、文件、护照等敏感图片添加防盗水印，本工具都能轻松满足您的需求。</p>
+        <p>与其他在线水印工具不同，Privacy Mark 采用<strong>100% 纯浏览器本地处理</strong>技术，您的图片绝不会被上传到任何服务器，从源头彻底保护您的隐私安全。</p>
+      </section>
+      <section>
+        <h2>适用场景</h2>
+        <ul>
+          <li><strong>身份证水印</strong> - 办理业务时需要提交身份证复印件，先加上"仅供XXX使用"的水印防止被盗用</li>
+          <li><strong>证件照水印</strong> - 护照、驾照、学生证等各类证件照的防盗保护</li>
+          <li><strong>合同文件水印</strong> - 为电子合同、协议等重要文件添加专属水印</li>
+          <li><strong>照片加水印</strong> - 个人照片、作品图片的版权保护</li>
+        </ul>
+      </section>
+      <section>
+        <h2>常见问题</h2>
+        <details>
+          <summary>身份证怎么加水印？</summary>
+          <p>上传您的身份证图片，在水印文字栏输入需要的内容（如"仅供办理xx业务使用"），调整透明度和角度后即可一键导出。整个过程完全在您的浏览器本地完成，绝不上传任何图片。</p>
+        </details>
+        <details>
+          <summary>给证件照加水印安全吗？</summary>
+          <p>本工具采用纯前端技术，所有图片处理均在您的设备上完成。没有后端服务器，没有数据传输，您的证件照只存在于您自己的浏览器内存中，关闭页面后即消失。</p>
+        </details>
+        <details>
+          <summary>支持哪些图片格式？</summary>
+          <p>支持上传 JPG、PNG、WebP、BMP 等常见格式，导出可选择 PNG（无损最高画质）、JPG（平衡体积与画质）、WebP（现代推荐格式）。</p>
+        </details>
+        <details>
+          <summary>可以自定义水印样式吗？</summary>
+          <p>当然可以。您可以自由设置水印文字内容、字体、颜色、透明度、大小、旋转角度和间距等参数，满足各种个性化需求。</p>
+        </details>
+      </section>
+      <p class="seo-copyright">© 2026 Privacy Mark - 免费在线图片水印工具 | 身份证加水印 | 证件照加水印 | 100% 本地处理</p>
+    </div>
+  </footer>
+
+  <script src="js/watermark.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

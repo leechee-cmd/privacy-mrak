@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://privacy-mark.pages.dev/sitemap.xml
