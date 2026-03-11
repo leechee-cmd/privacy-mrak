@@ -175,6 +175,30 @@ class UIController {
 
     // ======= 主题切换 =======
     el.themeToggle.addEventListener('click', () => this._toggleTheme());
+
+    // ======= 关于弹窗 =======
+    const aboutBtn = document.getElementById('aboutBtn');
+    const aboutModal = document.getElementById('aboutModal');
+    const aboutClose = document.getElementById('aboutClose');
+
+    if (aboutBtn && aboutModal) {
+      // 打开弹窗
+      aboutBtn.addEventListener('click', () => {
+        aboutModal.hidden = false;
+      });
+
+      // 关闭弹窗（点击按钮）
+      aboutClose.addEventListener('click', () => {
+        aboutModal.hidden = true;
+      });
+
+      // 关闭弹窗（点击蒙层背景）
+      aboutModal.addEventListener('click', (e) => {
+        if (e.target === aboutModal) {
+          aboutModal.hidden = true;
+        }
+      });
+    }
   }
 
   /**
@@ -378,24 +402,40 @@ class UIController {
 
   // ======= 主题切换 =======
 
-  /** 初始化主题 */
+  /** 初始化主题（优先用户选择 > 跟随系统偏好） */
   _initTheme() {
     const saved = localStorage.getItem('watermark-theme');
-    if (saved === 'light') {
-      document.documentElement.setAttribute('data-theme', 'light');
+    if (saved) {
+      // 用户之前手动选择过，使用保存的主题
+      this._applyTheme(saved);
+    } else {
+      // 首次访问，跟随系统偏好
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      this._applyTheme(prefersDark ? 'dark' : 'light');
     }
-    // 默认暗色，无需额外设置
+
+    // 监听系统主题变化（仅在用户未手动选择时自动跟随）
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('watermark-theme')) {
+        this._applyTheme(e.matches ? 'dark' : 'light');
+      }
+    });
   }
 
-  /** 切换亮色/暗色主题 */
+  /** 应用指定主题 */
+  _applyTheme(theme) {
+    if (theme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+  }
+
+  /** 切换亮色/暗色主题（手动切换后记忆选择） */
   _toggleTheme() {
     const current = document.documentElement.getAttribute('data-theme');
     const next = current === 'light' ? 'dark' : 'light';
-    if (next === 'dark') {
-      document.documentElement.removeAttribute('data-theme');
-    } else {
-      document.documentElement.setAttribute('data-theme', next);
-    }
+    this._applyTheme(next);
     localStorage.setItem('watermark-theme', next);
   }
 }
