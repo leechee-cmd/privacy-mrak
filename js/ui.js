@@ -130,6 +130,7 @@ class UIController {
       const val = parseInt(el.fontSize.value);
       el.fontSizeValue.textContent = `${val}px`;
       this.engine.updateConfig({ fontSize: val });
+      this._updateSliderFill(el.fontSize);
     });
 
     // 字体颜色
@@ -151,6 +152,7 @@ class UIController {
       const val = parseInt(el.opacity.value);
       el.opacityValue.textContent = `${val}%`;
       this.engine.updateConfig({ opacity: val / 100 });
+      this._updateSliderFill(el.opacity);
     });
 
     // 旋转角度
@@ -158,6 +160,7 @@ class UIController {
       const val = parseInt(el.rotation.value);
       el.rotationValue.textContent = `${val}°`;
       this.engine.updateConfig({ rotation: val });
+      this._updateSliderFill(el.rotation);
     });
 
     // 水印间距
@@ -165,6 +168,12 @@ class UIController {
       const val = parseInt(el.spacing.value);
       el.spacingValue.textContent = `${val}px`;
       this.engine.updateConfig({ spacing: val });
+      this._updateSliderFill(el.spacing);
+    });
+
+    // 延迟初始化滑块填充色，确保 DOM 完全渲染后计算
+    requestAnimationFrame(() => {
+      [el.fontSize, el.opacity, el.rotation, el.spacing].forEach(s => this._updateSliderFill(s));
     });
 
     // ======= 自定义下拉菜单初始化 =======
@@ -398,6 +407,26 @@ class UIController {
     if (this._globalOverlay) {
       this._globalOverlay.classList.remove('active');
     }
+  }
+
+  // ======= 滑块填充色 =======
+
+  /**
+   * 更新滑块轨道的已填充部分（iOS 风格蓝色高亮）
+   * @param {HTMLInputElement} slider - range 类型的 input 元素
+   */
+  _updateSliderFill(slider) {
+    const min = parseFloat(slider.min);
+    const max = parseFloat(slider.max);
+    const val = parseFloat(slider.value);
+    const percent = ((val - min) / (max - min)) * 100;
+    // 使用 CSS 变量获取当前主题的 accent 色
+    const accentColor = getComputedStyle(document.documentElement)
+      .getPropertyValue('--accent-primary').trim() || '#0a84ff';
+    const trackColor = getComputedStyle(document.documentElement)
+      .getPropertyValue('--border-color').trim() || 'rgba(255,255,255,0.15)';
+
+    slider.style.background = `linear-gradient(to right, ${accentColor} 0%, ${accentColor} ${percent}%, ${trackColor} ${percent}%, ${trackColor} 100%)`;
   }
 
   // ======= 主题切换 =======

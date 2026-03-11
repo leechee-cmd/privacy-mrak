@@ -282,10 +282,22 @@ body {
 .panel-scroll {
   flex: 1;
   overflow-y: auto;
-  padding: var(--space-lg);
+  padding: var(--space-lg) var(--space-md);
   display: flex;
   flex-direction: column;
-  gap: var(--space-lg);
+  gap: var(--space-md);
+}
+
+/* 专门针对操作面板滚动条变细 */
+.panel-scroll::-webkit-scrollbar {
+  width: 2.5px; /* 改得更细，原全局为 6px */
+}
+.panel-scroll::-webkit-scrollbar-thumb {
+  background: rgba(134, 134, 139, 0.4); /* 半透明灰色 */
+  border-radius: 4px;
+}
+.panel-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(134, 134, 139, 0.8);
 }
 
 /* 面板分区 */
@@ -296,12 +308,23 @@ body {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); /* 加深整体阴影 */
+  border: 1px solid rgba(255, 255, 255, 0.08); /* 边缘高光 */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.panel-section:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
 [data-theme="light"] .panel-section {
-  border: none;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .panel-section:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .section-title {
@@ -532,10 +555,11 @@ body {
   width: 100%;
   height: 4px;
   background: var(--border-color);
-  border-radius: 2px;
+  border-radius: 4px;
   outline: none;
   cursor: pointer;
   margin: 10px 0;
+  overflow: visible;
 }
 
 .form-range::-webkit-slider-thumb {
@@ -599,7 +623,7 @@ body {
 }
 
 .color-preset:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 [data-theme="dark"] .color-preset {
